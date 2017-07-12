@@ -8,9 +8,8 @@
   </head>
   <body ng-controller="RedisCtrl">
     <div style="width: 50%; margin-left: 20px">
-      <h2>Frontend to Redis test App</h2>
-      <h2>Hello, this web-page is served by: <? $_SERVER['SERVER_NAME'] ?> </h2>
-      <h2>The containers private IP is: <? $_SERVER['SERVER_ADDR'] ?> </h2>
+      <h2>This web-page is served by: <?php print gethostname(); ?> </h2>
+      <h2>The containers private IP is: <?php print $_SERVER['SERVER_ADDR']; ?> </h2>
       <img src="NSX.png">
     <form>
     <fieldset>
@@ -18,6 +17,7 @@
     <button type="button" class="btn btn-primary" ng-click="controller.onRedis()">Submit</button>
     </fieldset>
     </form>
+    <h3>Messages stored in Redis:</h3>
     <div>
       <div ng-repeat="msg in messages track by $index">
         {{msg}}
