@@ -1,0 +1,17 @@
+kind: NetworkPolicy
+apiVersion: extensions/v1beta1
+metadata:
+  name: allow-redis-communication
+  namespace: redis-isolated
+spec:
+  podSelector:
+    matchLabels:
+      app: redis
+  ingress:
+    - ports:
+        - protocol: TCP
+          port: 6379
+#      from:
+#        - namespaceSelector:
+#            matchLabels:
+#              name: yasen
