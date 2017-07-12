@@ -10,5 +10,5 @@ RUN sed -i 's#CustomLog /proc/self/fd/1 combined#CustomLog "|/bin/cat" combined#
 
 ADD guestbook.php /var/www/html/guestbook.php
 ADD controllers.js /var/www/html/controllers.js
-ADD index.html /var/www/html/index.html
+ADD index.php /var/www/html/index.php
 ADD NSX.png /var/www/html/NSX.png
